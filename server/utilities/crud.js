@@ -18,13 +18,15 @@ function handlePost(){
 }
 
 
-function handleUpdateLike(id, totalLikes, res){
+function handleUpdateLikes(id, totalLikes, res){
 	var query = {_id: id};
 	var update = {likes: totalLikes}
 	var option = {new: true}
 	db.Article.findOneAndUpdateQ(query, update, option)
-	.then(function(data) {res.jason(data)})
-	.catch(function(err) {res.send(err)})
+	.then(function(data) {
+		console.log(data);
+		res.json(data);
+	}).catch(function(err) {res.json(err)})
 	.done();
 }
 
@@ -33,5 +35,6 @@ function handleDelete(){
 }
 
 module.exports = {
-	handleGet: handleGet
+	handleGet: handleGet,
+	handleUpdateLikes: handleUpdateLikes
 }

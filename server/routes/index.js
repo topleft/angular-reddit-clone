@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
 	crud.handleGet(res);
 });
 
-router.put('/likes/:id/:likes', function(req, res, next){
-	crud.handleUpdateLikes(req.params.id, req.params.likes, res);
+router.put('/likes', function(req, res, next){
+	crud.handleUpdateLikes(req.body.id, req.body.likes, res);
 });
 
 module.exports = router;

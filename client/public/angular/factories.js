@@ -6,7 +6,8 @@ angular.module('factories').factory('factory', ['$http', function($http){
 				return $http.get('/articles');
 			},
 			updateLikes: function(id, likes){
-				$http.put('/likes', {id: id, likes: likes})}
+				likes++
+				return $http.put('articles/likes', {id: id, likes: likes})}
 		};
 
 }]);
