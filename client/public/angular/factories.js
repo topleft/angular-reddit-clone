@@ -3,7 +3,7 @@ angular.module('factories', []);
 angular.module('factories').factory('factory', ['$http', function($http){
 		return {
 			getArticles: function(){
-				return $http.get('/');
+				return $http.get('/articles');
 			},
 			updateLikes: function(id, likes){
 				$http.put('/likes', {id: id, likes: likes})}
