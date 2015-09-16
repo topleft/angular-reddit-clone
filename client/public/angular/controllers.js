@@ -15,13 +15,20 @@ app.controller('myCtrl', ['$scope', 'factory', function($scope, factory){
 
 app.controller('myFormCtrl', ['$scope', 'factory', function($scope, factory){
 
-	// $scope.articles;
+  $scope.title = "";
+  $scope.author = "";
+  $scope.category = "";
+  $scope.img = "";
+  $scope.text = "";
 
- //  factory.getArticles()
- //    .success(function(data){
- //      $scope.articles = data;
- //    })
-
- //  $scope.sort = "title";
-
+  $scope.postArticle = function(){
+    factory.postArticle( $scope.title,
+                         $scope.author,
+                         $scope.category,
+                         $scope.img,
+                         $scope.test )
+    .success(function(){
+      alert("Article Posted!");
+    });
+  };
 }]);

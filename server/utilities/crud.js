@@ -13,8 +13,26 @@ function handleGetOne(){
 
 }
 
-function handlePost(){
-
+function handlePost(title, author, category, img, text, res){
+	var article = new db.Article ({
+							    title : title,
+							    author: author,
+							    category: category,
+							    img: img,
+							    text: text,
+							    likes: 0,
+							    comments: ""
+							  });
+	console.log(article);
+	article.saveQ()
+		.then(function(data){
+			console.log("new Article created");
+			res.json(data);
+		})
+		.catch(function(err){
+			res.json(err);
+		})
+		.done();
 }
 
 
@@ -36,5 +54,6 @@ function handleDelete(){
 
 module.exports = {
 	handleGet: handleGet,
-	handleUpdateLikes: handleUpdateLikes
+	handleUpdateLikes: handleUpdateLikes,
+	handlePost: handlePost
 }

@@ -3,20 +3,24 @@
   <form>
     <div class="form-group">
       <label for="title-input">Title</label>
-      <input type="text" class="form-control" id="title-input" placeholder="Title">
+      <input ng-model='title' type="text" class="form-control" id="title-input" placeholder="Title">
     </div>
     <div class="form-group">
       <label for="author-input">Author</label>
-      <input type="text" class="form-control" id="author-input" placeholder="Author">
+      <input ng-model="author" type="text" class="form-control" id="author-input" placeholder="Author">
+    </div>
+    <div class="form-group">
+      <label for="category-input">Category</label>
+      <input ng-model="category" type="text" class="form-control" id="category-input" placeholder="Category">
     </div>
     <div class="form-group">
       <label for="pic-input">Picture Link (URL)</label>
-      <input type="text" class="form-control" id="pic-input" placeholder="Picutre URL">
+      <input ng-model="img" type="text" class="form-control" id="pic-input" placeholder="Picutre URL">
     </div>
     <div class="form-group">
       <label for="text-input">Text</label>
-      <input type="text" class="form-control" id="text-input" placeholder="Text">
+      <input ng-model='text' type="text" class="form-control" id="text-input" placeholder="Text">
     </div>
-    <button type="submit" class="btn btn-default" ng-click="">Submit</button>
+    <button type="submit" class="btn btn-default" ng-click="postArticle()">Submit</button>
   </form>
 </div>
