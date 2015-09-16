@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
+var seed = require('../seed');
 
 
 // *** routes *** //
@@ -18,8 +19,8 @@ var app = express();
 
 
 // *** view engine *** //
-// var swig = new swig.Swig();
-// app.engine('html', swig.renderFile);
+var swig = new swig.Swig();
+app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 
 
@@ -39,7 +40,7 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 app.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../client/public/views/', 'layout.html'));
 });
-app.use('/', routes);
+app.use('/articles', routes);
 
 
 // catch 404 and forward to error handler

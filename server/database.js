@@ -1,17 +1,18 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
+console.log("in DB")
 
-var userSchema = new Schema({
-	name: String,
-	email: String,
-	password: String
-});
+// var userSchema = new Schema({
+// 	name: String,
+// 	email: String,
+// 	password: String
+// });
 
-var commentSchema = new Schema({
-		user: [userSchema],
-		comment: String
-	}
-);
+// var commentSchema = new Schema({
+// 		user: [userSchema],
+// 		comment: String
+// 	}
+// );
 
 var articleSchema = new Schema(
   {
@@ -21,14 +22,19 @@ var articleSchema = new Schema(
     img: String,
     text: String,
     likes: Number,
-    comments: [commentSchema]
-    // any other key value pairs
+    comments: String
   }
 );
 
 
+// var User = mongoose.model('User', userSchema);
+// var Comment = mongoose.model('Comment', commentSchema);
 var Article = mongoose.model('Article', articleSchema);
 
-module.exports = Article;
+module.exports = {
+	Article: Article,
+	// Comment: Comment,
+	// User: User
+}
 
 mongoose.connect('mongodb://localhost/article-database');
