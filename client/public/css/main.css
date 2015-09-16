@@ -4,9 +4,13 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: none;
 }
 
 #sort {
 	width: 150px;
 }
+
+/*a {
+	color: none;
+}*/

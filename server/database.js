@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
-console.log("in DB")
+console.log("in article-database")
 
 // var userSchema = new Schema({
 // 	name: String,

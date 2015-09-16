@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='myApp'>
+<html ng-app='myApp' ng-controller="myCtrl">
   <head>
     <meta charset="utf-8">
     <title>{{ title }}</title>
@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
+
+    <nav class='navbar navbar-default'>
+      <div class="row">
+        <form class='form-inline col-md-4 col-md-offset-1'>
+          <div class="form-group">
+            <label for="search">Search</label>
+            <input type="text" class="form-control" id="search-input" placeholder="Search...">
+          </div>
+          <button id="search-button" type="submit" class="btn btn-default">Search</button>
+        </form>
+        <select ng-model='sort' class="form-control col-md-1 col-md-offset-1 navbar-nav nav" id='sort'>
+          <option value='title' selected>Title</option>
+          <option value='author'>Author</option>
+          <option value='-votes'>Votes</option>
+        </select>
+        <a href="#/form"><button class=" btn col-md-1 col-md-offset-2"  id="new-post-button" type="button" class="btn btn-default" >New Post</button></a>
+      </div>
+    </nav>
+
     <div class="container">
       <div ng-view></div>
     </div>
