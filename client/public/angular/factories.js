@@ -11,6 +11,3 @@ angular.module('factories').factory('factory', ['$http', function($http){
 		};
 
 }]);
-
-
-// need to use this factory in controller to update likes via like button click

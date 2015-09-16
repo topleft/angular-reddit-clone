@@ -1,4 +1,4 @@
-angular.module('directives', ['factories']).directive('articleTemplate', function(){
+angular.module('directives', []).directive('articleTemplate', function(){
 	return {
 		restrict: 'A',
 		scope: {

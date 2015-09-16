@@ -8,6 +8,7 @@ app.controller('myCtrl', ['$scope', 'factory', function($scope, factory){
     .success(function(data){
       $scope.articles = data;
     })
-
+    
+  $scope.sort = "title";
 
 }]);
