@@ -13,7 +13,7 @@ app.controller('myCtrl', ['$scope', 'factory', function($scope, factory){
 
 }]);
 
-app.controller('myFormCtrl', ['$scope', 'factory', function($scope, factory){
+app.controller('myFormCtrl', ['$scope', '$location', 'factory', function($scope, $location, factory){
 
   $scope.title = "";
   $scope.author = "";
@@ -28,7 +28,8 @@ app.controller('myFormCtrl', ['$scope', 'factory', function($scope, factory){
                          $scope.img,
                          $scope.test )
     .success(function(){
-      alert("Article Posted!");
+      // alert("Article Posted!");
+      $location.url('/');
     });
   };
 }]);
