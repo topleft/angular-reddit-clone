@@ -11,7 +11,18 @@ angular.module('directives', []).directive('articleTemplate', function(){
 						$scope.article = data;
 				});
 			};
-			// console.log($scope.article);
+		}
+	};
+});
+
+angular.module('directives').directive('commentTemplate', function(){
+	return {
+		restrict: 'A',
+		scope: {
+			comment: '='
+		},
+		templateUrl: 'views/comment-template.html',
+		controller: function($scope, factory){
 		}
 	};
 });

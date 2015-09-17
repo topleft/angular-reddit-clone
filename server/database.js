@@ -8,11 +8,11 @@ console.log("in article-database")
 // 	password: String
 // });
 
-// var commentSchema = new Schema({
-// 		user: [userSchema],
-// 		comment: String
-// 	}
-// );
+var commentSchema = new Schema({
+		user: String, // replace with userSchema later
+		comment: String
+	}
+);
 
 var articleSchema = new Schema(
   {
@@ -22,7 +22,7 @@ var articleSchema = new Schema(
     img: String,
     text: String,
     likes: Number,
-    comments: String
+    comments: [commentSchema]
   }
 );
 

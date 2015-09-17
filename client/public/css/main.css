@@ -10,3 +10,15 @@ a {
 #sort {
 	width: 150px;
 }
+
+.right-margin{
+	margin-right: 30px;
+}
+
+.article-pic {
+	border-radius: 15px;
+}
+
+li {
+	list-style: none;
+}

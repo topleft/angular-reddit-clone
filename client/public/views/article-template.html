@@ -1,7 +1,8 @@
-<div class='container'>
+<div class='container panel panel-default'>
 <br>
+<div class="panel-body">
 	<div class="row">
-		<div class="col-md-2 col-md-offset-1">IMG</div>
+		<div class="col-md-2 right-margin" ><img class="article-pic" src="{{article.img}}" style="width:200px;height:200px;"></div>
 		<div class="col-md-8">
 			<div class="row">
 				<div class="col-md-4"><h4>{{article.title}}</h4>
@@ -26,12 +27,13 @@
 					<span>DATE</span>
 				</div>
 				<div class='col-md-2'>
-					<span>comments</span>
+					<div ng-repeat='comment in article.comments' comment>{{comment.comment}}</div>
 				</div>
 				<div class='col-md-2'>
 					<button class="btn btn-sm btn-default">New Comment</button>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>
