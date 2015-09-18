@@ -7,6 +7,11 @@ a {
   color: none;
 }
 
+.vertical-align {
+	display: flex;
+  align-items: center;
+}
+
 #sort {
 	width: 150px;
 }

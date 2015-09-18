@@ -4,16 +4,14 @@
 	<div class="row">
 		<div class="col-md-2 right-margin" ><img class="article-pic" src="{{article.img}}" style="width:200px;height:200px;"></div>
 		<div class="col-md-8">
-			<div class="row">
+			<div class="row vertical-align">
 				<div class="col-md-4"><h4>{{article.title}}</h4>
 				</div>
-				<div class='col-md-2'>
-					<button class="btn btn-primary btn-sm like-btn" ng-click="updateLikes()">Like</button>
+				<div class='col-md-3'>
+					<a class="btn btn-default btn-xs like-btn" ng-click="updateLikes()">Like</a>
+					<strong>&nbsp;{{article.likes}}</strong>
 				</div>
-				<div class="col-md-1">
-					<p>{{article.likes}}</p>
-				</div>
-				<div class='col-md-2 col-md-offset-1'>
+				<div class='col-md-3 col-md-offset-1'>
 					<p>{{article.author}}</p>
 				</div>
 			</div>
@@ -22,15 +20,16 @@
 					<p>{{article.text}}</p>
 				</div>
 			</div>
-			<div class='row'>
+			<br>
+			<div class='row vertical-align'>
+				<div class='col-md-3'>
+					<span class="glyphicon glyphicon-calendar">&nbsp;{{ article.dateCreated | date}}</span>
+				</div>
 				<div class='col-md-2'>
-					<span>{{ article.dateCreated | date }}</span>
+					<button class="btn btn-xs btn-default">New Comment</button>
 				</div>
 				<div class='col-md-6'>
 					<div ng-repeat='comment in article.comments' comment='comment' comment-template></div>
-				</div>
-				<div class='col-md-2'>
-					<button class="btn btn-sm btn-default">New Comment</button>
 				</div>
 			</div>
 		</div>
