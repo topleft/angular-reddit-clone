@@ -1,5 +1,9 @@
-<div class='container'>
-	<ul>
-		<li><strong>{{comment.user}}:&nbsp;</strong>{{comment.coment}}</li>
-	</ul>
+<h4 >Comments&nbsp;<span ng-click='getComments()' class="caret"></span></h4>
+<div ng-show='show'>
+	<table class='table'>
+		<tr>
+			<td><strong>{{comment.user}}:</strong></td>
+			<td>{{comment.comment}}</td>
+		</tr>
+	</table>
 </div>

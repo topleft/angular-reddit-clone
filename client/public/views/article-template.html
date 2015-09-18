@@ -24,10 +24,10 @@
 			</div>
 			<div class='row'>
 				<div class='col-md-2'>
-					<span>DATE</span>
+					<span>{{ article.dateCreated | date }}</span>
 				</div>
-				<div class='col-md-2'>
-					<div ng-repeat='comment in article.comments' comment>{{comment.comment}}</div>
+				<div class='col-md-6'>
+					<div ng-repeat='comment in article.comments' comment='comment' comment-template></div>
 				</div>
 				<div class='col-md-2'>
 					<button class="btn btn-sm btn-default">New Comment</button>

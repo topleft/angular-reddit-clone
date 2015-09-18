@@ -22,6 +22,7 @@ var articleSchema = new Schema(
     img: String,
     text: String,
     likes: Number,
+    dateCreated: {type: Date, default: Date.now},
     comments: [commentSchema]
   }
 );

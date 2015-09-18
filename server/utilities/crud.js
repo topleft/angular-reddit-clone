@@ -4,10 +4,13 @@ var db = require("../database.js");
 
 function handleGet(res){
 	db.Article.findQ()
-	.then(function(data) {res.json(data)})
-	.catch(function(err) {res.send(err)})
+	.then(function(data) {
+		res.json(data);
+	}).catch(function(err) {res.send(err)})
 	.done();
 }
+
+
 
 function handleGetOne(){
 
