@@ -2,7 +2,9 @@
 
 <div class="container">
 	<div class="row">
-		<div id="article" ng-repeat="article in articles | orderBy: sort | filter: searchText">
+		<!-- METHOD 1 -->
+		<!-- <div id="article" ng-repeat="article in articles | orderBy: sort | filter: searchText"> -->
+		<div id="article" ng-repeat="article in news.articles | orderBy: sort | filter: searchText">
 			<div class="col-md-12" article-template article='article'></div>
 		</div>
 	</div>
